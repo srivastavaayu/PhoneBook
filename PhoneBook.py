@@ -1,7 +1,6 @@
 from Tkinter import *
 from tkMessageBox import *
 import sqlite3
-import CoverPhoneBook
 ## Main Root Window Declaration
 root=Tk()
 root.title("PhoneBook")
@@ -63,7 +62,6 @@ tempn=0
 tempe=0
 t=0
 conid=0
-iphno=[]
 def addph():
     global i,j,phno,ph,offph,homph,mobph,iphno
     i=i+2
@@ -79,10 +77,6 @@ def addph():
     phno=Entry(root,bg="#E3FFF3")
     phno.grid(row=i+1,column=1)
     Label(root,text="*Mandatory Field",font="Garamond 10",bg="#D0FFED").grid(row=i+1,column=2,sticky="W")
-    def appph():
-        global iphno
-        iphno.append(str(phno.get()))
-    appph()
     Button(root,text="+",command=addph,bg="#88FFD1").grid(row=i,column=4)
 def addem():
     global i,j,emid,em,offem,perem,iphno

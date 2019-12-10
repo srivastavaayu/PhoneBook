@@ -63,7 +63,7 @@ tempe=0
 t=0
 conid=0
 def addph():
-    global i,j,phno,ph,offph,homph,mobph,iphno
+    global i,j,phno,ph,offph,homph,mobph
     i=i+2
     addem()
     Label(root,text="Select Phone Type: ",font="Garamond 14",bg="#D0FFED").grid(row=i,column=0,sticky="E")
@@ -79,9 +79,8 @@ def addph():
     Label(root,text="*Mandatory Field",font="Garamond 10",bg="#D0FFED").grid(row=i+1,column=2,sticky="W")
     Button(root,text="+",command=addph,bg="#88FFD1").grid(row=i,column=4)
 def addem():
-    global i,j,emid,em,offem,perem,iphno
+    global i,j,emid,em,offem,perem
     j=j+2
-    print iphno
     Label(root,text="Select E-mail Type: ",font="Garamond 14",bg="#D0FFED").grid(row=j,column=0,sticky="E")
     offem=Radiobutton(root,text="Office",variable=em,value="Office",tristatevalue=0,font="Garamond 14",bg="#D0FFED")
     offem.grid(row=j,column=1)
@@ -93,7 +92,7 @@ def addem():
     Label(root,text="*Mandatory Field",font="Garamond 10",bg="#D0FFED").grid(row=j+1,column=2,sticky="W")
     Button(root,text="+",command=addem,bg="#88FFD1").grid(row=j,column=4)
 def save():
-    global phno,emid,ph,em,offph,homph,mobph,offem,perem,iphno
+    global phno,emid,ph,em,offph,homph,mobph,offem,perem
     if fname.get()=="":
         showerror("Save","Please enter your First Name!")
         return
